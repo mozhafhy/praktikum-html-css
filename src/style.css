@@ -165,7 +165,8 @@ form {
   width: clamp(332px, 50vw, 514px);
   height: fit-content;
   padding: var(--signin-form-pad);
-  background-color: var(--primary-500);
+  background-image: url("assets/pattern.png");
+  background-repeat: repeat;
   border-radius: 32px;
   display: flex;
   flex-direction: column;
