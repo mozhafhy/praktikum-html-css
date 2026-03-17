@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <form>
+      <div class="headers">
+        <a class="back" href="login.html">
+          <i class="material-icons-outlined">arrow_back</i>
+          <span class="label medium">Back</span>
+        </a>
+        <h1 class="headline small">Sign Up</h1>
+      </div>
+
+      <div class="input-wrapper">
+        <div class="container email-input">
+          <label class="label large" for="email">Email</label>
+          <div class="input-field">
+            <input
+              class="body small"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+            <i class="material-icons-outlined">email</i>
+          </div>
+        </div>
+
+        <div class="container password-input">
+          <label class="label large" for="password">Password</label>
+          <div class="input-field">
+            <input
+              class="body small"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <i class="material-icons-outlined">visibility</i>
+          </div>
+        </div>
+
+        <div class="container confirm-password-input">
+          <label class="label large" for="confirm-password"
+            >Confirm Password</label
+          >
+          <div class="input-field">
+            <input
+              class="body small"
+              type="password"
+              name="confirm-password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <i class="material-icons-outlined">visibility</i>
+          </div>
+        </div>
+
+        <div class="container signup">
+          <a href="login.html">
+            <button type="submit" class="label large submit" name="submit">
+              Submit
+            </button>
+          </a>
+          <label class="body small" for="submit">
+            Already a member?
+            <a id="signin-now" href="login.html">Sign in now!</a>
+          </label>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

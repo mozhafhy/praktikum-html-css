@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Chonburi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
+/** agar padding tidak mempengaruhi ukuran */
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/** variabel-variabel */
+:root {
+  /** warna netral */
+ --neutrals-dark : #2D1E17; 
+ --neutrals-light: #F0E6DA;
+
+ /** base colors */
+ --primary-50 : #FDF7DB;
+ --primary-500: #EEBA55;
+ --primary-700: #E36A1D;
+ 
+ --second-50 : #F0F5D6;
+ --second-500: #6C7D36;
+ --second-700: #3F5D38;
+
+ --accent-50 : #E6F4F4;
+ --accent-500: #697FAF;
+ --accent-700: #27636B;
+
+ /** grayscale colors */
+ --gray-20: #322F37;
+ --gray-30: #49454F;
+ --gray-40: #605D66;
+ --gray-50: #79747E;
+ --gray-60: #938F99;
+ --gray-70: #AEA9B4;
+ --gray-80: #CAC4D0;
+
+ /** semantic colors */
+ --success-bg: var(--second-50);
+ --success-base: #94B44F;
+
+ --warning-bg: var(--primary-50);
+ --warning-base: #E4D085;
+
+ --informational-bg: var(--accent-50);
+ --informational-base: #89C2E0;
+
+ --error-bg  : #FBD9D4;
+ --error-base: #DC312F;
+
+ /** fonts */
+ --font-display-family: Chonburi, 'Garamond', serif;
+ --font-body-family: Domine, serif;
+
+ /** clamps */
+ --signin-form-top-pad: clamp(1.5rem, 10vh,2.25rem);
+ --signin-form-right-pad: clamp(2rem, 20vw,2rem);
+ --signin-form-left-pad: clamp(2rem, 20vw,2rem);
+ --signin-form-bottom-pad: clamp(1.5rem, 10vh, 2.75rem);
+ 
+ --signin-form-pad:
+    var(--signin-form-top-pad)    /* top */
+    var(--signin-form-right-pad)  /* right */
+    var(--signin-form-bottom-pad) /* bottom */
+    var(--signin-form-left-pad);  /* left */
+ 
+}
+
+/** typefaces sebagai kelas */
+.display {
+  font-family: var(--font-display-family);
+  font-weight: normal;
+  word-spacing: 0;
+
+  &.large { font-size: 57px; line-height: 64px;
+    word-spacing: -0.25px;
+  }
+
+  &.medium {
+    font-size: 45px;
+    line-height: 52px;
+  }
+
+  &.small {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.headline {
+  font-family: var(--font-display-family);
+  font-weight: normal;
+  word-spacing: 0;
+
+  &.large {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &.medium {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  &.small {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.title {
+  font-family: var(--font-display-family);
+  font-weight: normal;
+
+  &.large { font-size: 22px; line-height: 28px; word-spacing: 0; }
+  &.medium { font-size: 16px; line-height: 24px; word-spacing: 0.15px; }
+  &.small { font-size: 14px; line-height: 20px; word-spacing: 0.1px; }
+}
+
+.label {
+  font-family: var(--font-body-family);
+  font-weight: bold;
+
+  &.large { font-size: 14px; line-height: 20px; word-spacing: 0.1px; }
+  &.medium { font-size: 12px; line-height: 16px; word-spacing: 0.5px; }
+  &.small { font-size: 11px; line-height: 16px; word-spacing: 0.5px; }
+}
+
+.body {
+  font-family: var(--font-body-family);
+  font-weight: normal;
+
+  &.large { font-size: 16px; line-height: 24px; word-spacing: 0.5px; }
+  &.medium { font-size: 14px; line-height: 20px; word-spacing: 0.25px; }
+  &.small { font-size: 12px; line-height: 16px;  word-spacing: 0.4px; }
+}
+
+button {
+  padding: 8px 20px;
+  color: var(--neutrals-light);
+  background-color: var(--second-500);
+  border-radius: 4px;
+  border: 0;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: var(--second-700);
+  }
+
+  &:active {
+    background-color: var(--accent-500);
+  }
+
+  &.submit {
+    width: 100%;
+  }
+}
+
+form {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: clamp(332px, 50vw, 514px);
+  height: fit-content;
+  padding: var(--signin-form-pad);
+  background-color: var(--primary-500);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    i {
+      color: var(--gray-60);
+      margin-left: -2.5rem;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    
+    .input-field {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  color: var(--gray-60);
+  border-radius: 0.25rem;
+  border-color: transparent;
+  
+  &:empty {
+    color: var(--neutrals-dark);
+  }
+  
+  &:focus {
+    outline-color: var(--accent-500);
+    color: var(--neutrals-dark);
+  }
+}
+
+.headers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.back {
+  display: flex;
+  background-color: transparent;
+  color: var(--neutrals-dark);
+  padding: 0;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  
+  i {
+    color: var(--neutrals-dark);
+    font-size: 1rem;
+  }
+}
+
+#signin-now, #signup-now {
+  color: var(--accent-500);
+
+  &:visited {
+    color: var(--second-500);
+  }
+}
+
+.forgot a {
+  color: var(--accent-500);
+
+  &:visited {
+    color: var(--second-500);
+  }
+}
